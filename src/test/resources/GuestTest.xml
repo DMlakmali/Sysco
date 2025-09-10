@@ -1,0 +1,10 @@
+<suite name="Shop">
+    <listeners>
+        <listener class-name="listeners.CustomReportListener"/>
+    </listeners>
+    <test name="Guest">
+        <classes>
+            <class name="Tests.GuestFlowTest"/>
+        </classes>
+    </test>
+</suite>
