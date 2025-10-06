@@ -2,9 +2,9 @@
     <listeners>
         <listener class-name="listeners.CustomReportListener"/>
     </listeners>
-    <test name="Guest">
+    <test name="Atlas">
         <classes>
-            <class name="Tests.GuestFlowTest"/>
+            <class name="loginTestUI.LoginTest"/>
         </classes>
     </test>
 </suite>

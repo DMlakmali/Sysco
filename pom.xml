@@ -29,13 +29,6 @@
 	</build>
 
 	<dependencies>
-		<!-- Selenium -->
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-java</artifactId>
-			<version>4.35.0</version>
-		</dependency>
-
 		<!-- Rest Assured -->
 		<dependency>
 			<groupId>io.rest-assured</groupId>
@@ -83,5 +76,51 @@
 			<version>6.3.1</version>
 		</dependency>
 
-	</dependencies>
+		<!-- https://mvnrepository.com/artifact/selenium-cucumber/selenium-cucumber-java -->
+		<!-- Cucumber Core -->
+    <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-java</artifactId>
+        <version>${cucumber.version}</version>
+        <scope>test</scope>
+    </dependency>
+
+		<!-- Cucumber JUnit -->
+    <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-junit</artifactId>
+        <version>${cucumber.version}</version>
+        <scope>test</scope>
+    </dependency>
+
+		<!-- JUnit (for running Cucumber tests) -->
+    <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.13.2</version> <!-- Or a later version -->
+        <scope>test</scope>
+    </dependency>
+
+		<!-- Selenium Java -->
+    <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>${selenium.version}</version>
+    </dependency>
+
+		<!-- WebDriver Manager (Optional, for automatic driver management) -->
+    <dependency>
+        <groupId>io.github.bonigarcia</groupId>
+        <artifactId>webdrivermanager</artifactId>
+        <version>${webdrivermanager.version}</version>
+        <scope>test</scope>
+    </dependency>
+</dependencies>
+
+<properties>
+    <cucumber.version>7.18.0</cucumber.version> <!-- Use the latest stable version -->
+    <selenium.version>4.22.0</selenium.version> <!-- Use the latest stable version -->
+    <webdrivermanager.version>5.9.1</webdrivermanager.version> <!-- Use the latest stable version -->
+</properties>
+	
 </project>

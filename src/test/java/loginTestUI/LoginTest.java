@@ -1,5 +1,6 @@
 package loginTestUI;
 
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
 import LoginUI.LoginPage;
@@ -13,6 +14,11 @@ public class LoginTest extends BaseTest {
 	public void loginTest() {
 		loginpage = new LoginPage(driver);
 		loginpage.enterUserName("cxweb013@sysco.com");
+
+	}
+
+	@AfterClass
+	public void tearDown() {
 
 	}
 

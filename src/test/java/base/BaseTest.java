@@ -8,6 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.BeforeTest;
 
 import config.ConfigReader;
+import io.cucumber.java.Before;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 
@@ -15,7 +16,8 @@ public class BaseTest {
 	
 	 public static WebDriver driver;
 	    Logger logger = LogManager.getLogger(BaseTest.class);
-
+	    
+       
 	    @BeforeTest
 	    public void setUp() {
 	        ConfigReader configReader = new ConfigReader();
