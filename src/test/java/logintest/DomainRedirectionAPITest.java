@@ -10,6 +10,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import loginAPI.DomainRedirectionRequestDTO;
+import play.api.libs.json.Json;
 
 public class DomainRedirectionAPITest {
 
@@ -30,8 +31,12 @@ public class DomainRedirectionAPITest {
 						+ "  getFeDomainRedirectionUrl(email: $email, currentDomain: $currentDomain) {\n"
 						+ "    redirectTo\n" + "  }\n" + "}");
 
+        System.out.println(payload);
+
 		ValidatableResponse response = RestAssured.given().contentType(ContentType.JSON).body(payload).when().post()
 				.then().assertThat().statusCode(200);
+
+        System.out.println(response.extract().asString());
 	}
 
 }

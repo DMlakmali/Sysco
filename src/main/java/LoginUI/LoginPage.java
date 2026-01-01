@@ -67,7 +67,7 @@ public class LoginPage extends PageBase {
 
 	public void waitUntilLoginLandingPageIsLoaded() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[contains(@class, 'login-page')]")));
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[contains(@class, 'login-body')]")));
 	}
 
 	public void clickOnSubmit2() {
