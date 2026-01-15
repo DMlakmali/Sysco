@@ -1,42 +1,21 @@
 package logintest;
 
-import java.util.HashMap;
-import java.util.Map;
-
+import loginAPI.DomainRedirectionService;
+import org.junit.Assert;
 import org.testng.annotations.Test;
 
-import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
-import io.restassured.response.Response;
-import io.restassured.response.ValidatableResponse;
-import loginAPI.DomainRedirectionRequestDTO;
-import play.api.libs.json.Json;
 
 public class DomainRedirectionAPITest {
 
+    DomainRedirectionService domainRedirectionService = new DomainRedirectionService();
+
 	@Test
-	public void domainredirectiontest() {
+	public void verifyThatCABLOktaEmailsAreRedirectedToCAWhenTheCurrentDomainIsCOM(){
 
-		RestAssured.baseURI = "https://gateway-api.shop.sysco.com/graphql";
 
-		Map<String, Object> variables = new HashMap<>();
-		variables.put("email", "cxweb013@sysco.com");
-		variables.put("currentDomain", ".com");
+        Assert.assertNotNull(domainRedirectionService.domainReDirection("Test11.Minimaster@corp.sysco.ca", ".com").getData().getGetFeDomainRedirectionUrl().getRedirectTo());
 
-		Map<String, Object> payload = new HashMap<>();
-		payload.put("operationName", "GetFeDomainRedirectionUrl");
-		payload.put("variables", variables);
-		payload.put("query",
-				"query GetFeDomainRedirectionUrl($email: String!, $currentDomain: String!) {\n"
-						+ "  getFeDomainRedirectionUrl(email: $email, currentDomain: $currentDomain) {\n"
-						+ "    redirectTo\n" + "  }\n" + "}");
 
-        System.out.println(payload);
-
-		ValidatableResponse response = RestAssured.given().contentType(ContentType.JSON).body(payload).when().post()
-				.then().assertThat().statusCode(200);
-
-        System.out.println(response.extract().asString());
 	}
 
 }

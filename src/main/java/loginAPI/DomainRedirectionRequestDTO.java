@@ -14,15 +14,24 @@ import java.util.Map;
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 public class DomainRedirectionRequestDTO {
 
-    
-		
-	   String query =
-	        "query GetFeDomainRedirectionUrl($email: String!, $currentDomain: String!) { " +
-	        "  getFeDomainRedirectionUrl(email: $email, currentDomain: $currentDomain) { " +
-	        "    redirectTo " +
-	        "  } " +
-	        "}";
 
-	    Map<String, Object> variables;
+
+    private String operationName;
+    private Map<String, Object> variables;
+    private String query;
+
+    public static DomainRedirectionRequestDTO domainRedirectionRequestDTO(Map<String, Object> variables) {
+        return DomainRedirectionRequestDTO.builder()
+                .operationName("GetFeDomainRedirectionUrl")
+                .variables(variables)
+                .query(
+                        "query GetFeDomainRedirectionUrl($email: String!, $currentDomain: String!) {\n" +
+                                "  getFeDomainRedirectionUrl(email: $email, currentDomain: $currentDomain) {\n" +
+                                "    redirectTo\n" +
+                                "  }\n" +
+                                "}"
+                )
+                .build();
+    }
 	
 }
