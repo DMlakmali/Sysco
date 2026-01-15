@@ -1,12 +1,9 @@
-package loginTestUI;
+package uiTest.loginTestUI;
 
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
-import LoginUI.LoginPage;
+import ui.LoginUI.LoginPage;
 import base.BaseTest;
 
 public class LoginTest extends BaseTest {

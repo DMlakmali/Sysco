@@ -1,4 +1,4 @@
-package loginAPI;
+package api.loginAPI;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.RestAssured;
@@ -17,7 +17,7 @@ public class DomainRedirectionService {
 
         try {
 
-            RestAssured.baseURI = "https://gateway-api.shop.sysco.com/graphql";
+            RestAssured.baseURI = "https://gateway-api.qa.cx-shop-nonprod.sysco-go.com/graphql";
 
             Map<String, Object> variables = new HashMap<>();
             variables.put("email", email);
