@@ -21,7 +21,7 @@ public class LoginTest extends BaseTest {
         loginpage.waitUntilLoginLandingPageIsLoaded();
         loginpage.enterUserName("cxweb013");
         loginpage.clickNext4();
-        loginpage.enterPassword("cr7dUfsnpqgHIj");
+        loginpage.enterPassword("");
         loginpage.clickOnSignIn();
         loginpage.clickOnSubmit2();
     }
