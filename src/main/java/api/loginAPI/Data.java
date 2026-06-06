@@ -1,4 +1,4 @@
-package loginAPI;
+package api.loginAPI;
 
 import lombok.Getter;
 import lombok.Setter;

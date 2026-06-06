@@ -1,6 +1,6 @@
-package logintest;
+package apiTest.logintest;
 
-import loginAPI.DomainRedirectionService;
+import api.loginAPI.DomainRedirectionService;
 import org.junit.Assert;
 import org.testng.annotations.Test;
 

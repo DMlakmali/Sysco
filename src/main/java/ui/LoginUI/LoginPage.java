@@ -1,4 +1,4 @@
-package LoginUI;
+package ui.LoginUI;
 
 import java.time.Duration;
 
